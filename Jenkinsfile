@@ -6,6 +6,16 @@ pipeline {
     }
 
     stages {
+        
+        stage('Run Snyk Open Source') {
+            steps {
+                snykSecurity(
+                    failOnIssues: false,
+                    monitorProjectOnBuild: false,
+                    snykInstallation: 'snyk-plugin'
+                )
+            }
+        }
 
         stage('Run Snyk Code') {
             steps {
