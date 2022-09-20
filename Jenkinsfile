@@ -17,5 +17,16 @@ pipeline {
                 )
             }
         }
+        
+        stage('Run Snyk IaC') {
+            steps {
+                snykSecurity(
+                    failOnIssues: false,
+                    monitorProjectOnBuild: false,
+                    snykInstallation: 'snyk-plugin',
+                    additionalArguments: '--iac'
+                )
+            }
+        }
     }
 }
