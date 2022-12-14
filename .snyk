@@ -3,3 +3,12 @@ exclude:
   code:
     - tests/**
     - test.spec.js
+version: v1.25.0
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  'npm:mem:20180117':
+    - '*':
+        reason: I don't want to fix this
+        expires: 2023-01-13T14:50:13.540Z
+        created: 2022-12-14T14:50:13.544Z
+patch: {}
