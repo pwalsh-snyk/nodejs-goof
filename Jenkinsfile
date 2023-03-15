@@ -58,7 +58,7 @@ pipeline {
             }
         }
 
-        stage('Publish Snyk Code Report') {
+        stage('Publish Snyk Open Source Report') {
             steps {
                 publishHTML(target: [
                     allowMissing: false,
@@ -66,7 +66,7 @@ pipeline {
                     keepAll: true,
                     reportDir: '.',
                     reportFiles: 'snyk-opensource.html',
-                    reportName: "Snyk Code Report"
+                    reportName: "Snyk Open Source Report"
                 ])
             }
         }
