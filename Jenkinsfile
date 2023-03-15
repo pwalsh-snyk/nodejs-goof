@@ -45,28 +45,15 @@ pipeline {
             }
         }
 
-        stage('Publish Snyk Code Report') {
+        stage('Publish Snyk Security Report') {
             steps {
                 publishHTML(target: [
                     allowMissing: false,
                     alwaysLinkToLastBuild: false,
                     keepAll: true,
                     reportDir: '.',
-                    reportFiles: 'snyk-code.html',
-                    reportName: "Snyk Code Report"
-                ])
-            }
-        }
-
-        stage('Publish Snyk Open Source Report') {
-            steps {
-                publishHTML(target: [
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: false,
-                    keepAll: true,
-                    reportDir: '.',
-                    reportFiles: 'snyk-opensource.html',
-                    reportName: "Snyk Open Source Report"
+                    reportFiles: ['snyk-opensource.html', 'snyk-code.html'],
+                    reportName: "Snyk Security Report"
                 ])
             }
         }
