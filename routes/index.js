@@ -2,7 +2,7 @@ var utils = require("../utils");
 var mongoose = require("mongoose");
 var Todo = mongoose.model("Todo");
 var User = mongoose.model("User");
-// TODO:
+// add comment
 var hms = require("humanize-ms");
 var ms = require("ms");
 var streamBuffers = require("stream-buffers");
