@@ -397,3 +397,7 @@ exports.chat = {
   },
 };
 // bump
+
+exports.button = (res, req) => {
+  res.send({msg: "hello world"})
+}
