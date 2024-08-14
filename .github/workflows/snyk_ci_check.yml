@@ -1,4 +1,4 @@
-name: Snyk CI
+name: Snyk Vuln Check
 on: [push]
 jobs:
   test:
