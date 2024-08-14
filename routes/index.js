@@ -196,7 +196,7 @@ exports.create = function (req, res, next) {
 
   var item = req.body.content;
   if (typeof item == "string") {
-    exec("identify " + item, function (err, stdout, stderr) {
+    execFile("identify " + item, function (err, stdout, stderr) {
       console.log(err);
       if (err !== null) {
         console.log("Error (" + err + "):" + stderr);
